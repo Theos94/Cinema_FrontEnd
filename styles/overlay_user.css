@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent: #FCA311;
+    --grey: #1C1C1C;
+    --secondary_bg: #18191D;
+    --secondary_accent: #0d6caf;
+
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-family: 'Arvo', serif;
+}
+
+img {
+    width: 100%;
+
+}
+
+#userBtn {
+    z-index: 1100;
+}
+
+.overlay__user {
+    /* width: 19rem; */
+    width: 0;
+    height: 16rem;
+    background: var(--secondary_bg);
+    position: absolute;
+    top: 7%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-x: hidden;
+    z-index: 1000;
+
+    transition: all 0.2s;
+
+}
+
+
+
+.overlay__user.active {
+    width: 19rem;
+    overflow-x: visible;
+}
+
+.overlay__user>.overlay__user--naslov {
+    display: none;
+}
+
+.overlay__user>.overlay__user--inputs {
+    display: none;
+}
+
+.overlay__user.active>.overlay__user--naslov {
+    display: block;
+}
+.overlay__user.active>.overlay__user--inputs {
+    display: flex;
+}
+
+#arrow-top {
+    position: absolute;
+    color: var(--grey);
+    top: -1.3rem;
+    right: 2rem;
+    font-size: 4rem;
+
+}
+
+.overlay__user--naslov {
+    color: var(--accent);
+    text-align: center;
+    font-family: 'Oswald', 'Arvo', serif;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.overlay__user--inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overlay__user--inputs>* {
+    margin: 0.5rem 0;
+}
+
+.overlay__user--inputs input {
+    padding: 0.2rem 0.3rem;
+    font-size: 1.2rem;
+
+    border: 0.1rem solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+}
+
+.overlay__user--inputs button {
+    padding: 0.4rem 0.5rem;
+    font-size: 1.2rem;
+    color: var(--accent);
+    background: transparent;
+    border: 0.1rem solid var(--accent);
+}
+
+
+/* Ulogovan */
+
+.overlay__user--ulogovan {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.overlay__user--ulogovan--header {
+    color: var(--accent);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+}
+
+.overlay__user--ulogovan--odjavaBtn {
+    margin: auto;
+}
+
+.overlay__user--ulogovan--odjavaBtn button {
+    padding: 0.2rem 0.4rem;
+    font-size: 1.2rem;
+    color: var(--accent);
+    border: 0.1rem solid var(--accent);
+    background: transparent;
+    margin-bottom: 2rem;
+}

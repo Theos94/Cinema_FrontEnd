@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/korisnici.css">
+    <link rel="stylesheet" href="styles/scrollbar.css">
+    <link rel="stylesheet" href="styles/overlay_user.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700|Oswald:400,500,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <title>Korisnici</title>
+</head>
+<body>
+
+    <div class="navigation">
+        <div class="navigation__left">
+            <a href="index.html">POCETNA</a>
+            <a href="repertoar.html">REPERTOAR</a>
+            <a href="projekcije.html" id="navProjekcije">PROJEKCIJE</a>
+            <a href="korisnici.html" id="navKorisnici">KORISNICI</a>
+        </div>
+        <div class="navigation__right">
+            <!-- <i class="fas fa-search" id="searchBtn"></i> -->
+            <i class="fas fa-user-circle" id="userBtn"></i>
+        </div>
+    </div>
+
+
+    <div class="site__wrapper">
+
+        <div class="korisnici">
+
+            <div class="korisnici__naslov">
+                <h1>KORISNICI</h1>
+
+            </div>
+
+            <div class="korisnici__input">
+                <button id="dodajBtn">DODAJ</button>
+            </div>
+
+            <div class="korisnici__kontejner">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="pageMask">
+
+    </div>
+
+    <div class="overlay__dodaj--korisnika">
+
+        <div class="overlay__edit--closeBtn">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <div class="overlay__dodaj--korisnika--header">
+            <h1>DODAJ KORISNIKA</h1>
+        </div>
+
+        <form action="#" class="overlay__dodaj--korisnika--inputs" id="formaDodaj" >
+            <input type="text" placeholder="Username here..." id="usernameInputDodaj" required>
+            <input type="text" placeholder="Ime here..." id="imeInput" required>
+            <input type="text" placeholder="Prezime here..." id="prezimeInput" required>
+            <input type="email" placeholder="Email here..." id="emailInput" required>
+            <input type="password" placeholder="Password here..." id="passwordInput1" required>
+            <input type="password" placeholder="Password again..." id="passwordInput2" required>
+
+            <button type="submit">DODAJ</button>
+
+        </form>
+    </div>
+
+    <div class="overlay__user">
+            <div id="arrow-top">
+                <i class="fas fa-sort-up"></i>
+            </div>
+            <div class="overlay__user--prijava">
+                <div class="overlay__user--naslov">
+                <h1>PRIJAVITE SE</h1>
+            </div>
+
+            <form class="overlay__user--inputs" id="formaPrijava">
+                <input type="text" id="usernameInput" placeholder="Username..." required>
+                <input type="password" id="passwordInput" placeholder="Password..." required>
+                <button type="submit">PRIJAVA</button>
+            </form>
+            </div>
+
+            <div class="overlay__user--ulogovan">
+
+            </div>
+        </div>
+
+    <script src="scripts/logovanje.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="scripts/korisnici.js"></script>
+
+</body>
+</html>

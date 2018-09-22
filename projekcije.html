@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/projekcije.css">
+    <link rel="stylesheet" href="styles/scrollbar.css">
+    <link rel="stylesheet" href="styles/overlay_search.css">
+    <link rel="stylesheet" href="styles/overlay_user.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700|Oswald:400,500,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->
+    <title>Projekcije</title>
+</head>
+
+<body>
+
+    <div class="navigation">
+        <div class="navigation__left">
+            <a href="index.html">POCETNA</a>
+            <a href="repertoar.html">REPERTOAR</a>
+            <a href="projekcije.html" id="navProjekcije">PROJEKCIJE</a>
+            <a href="korisnici.html" id="navKorisnici">KORISNICI</a>
+        </div>
+        <div class="navigation__right">
+            <!-- <i class="fas fa-search" id="searchBtn"></i> -->
+            <i class="fas fa-user-circle" id="userBtn"></i>
+        </div>
+    </div>
+
+    <div class="site__wrapper">
+
+        <div class="projekcije__wrapper">
+
+            <div class="kalendar__naslov">
+                <h1>Projekcije</h1>
+            </div>
+
+            <div class="projekcije__dodaj">
+                <button id="dodajBtn">DODAJ PROJEKCIJU</button>
+            </div>
+            <div class="kalendar__projekcije--kontejner">
+
+            </div>
+        </div>
+
+         <footer>
+
+            <h3>Pratite nas na drustvenim mrezama</h3>
+
+            <div class="footer__social--icons">
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook-square"></i>
+            </div>
+
+            <h5>
+                <i class="fa fa-copyright"></i> 2017 Uros Dragicevic</h5>
+
+        </footer>
+
+    </div>
+
+    <div id="pageMask">
+
+    </div>
+
+    <div class="overlay__edit">
+        <div class="overlay__edit--closeBtn">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <div class="overlay__edit--header">
+            <h1>Izmeni Projekciju</h1>
+        </div>
+
+        <form class="overlay__edit--inputs" action="#" id="formaEdit">
+            <select name="film" id="inputFilm">
+
+            </select>
+
+            <input type="date" name="datum" id="datumInput" required>
+            <input type="text" id="pocetakInput" placeholder="Pocetak Projekcije" required>
+            <select name="sala" id="salaInput" required>
+            </select>
+
+
+            <button type="submit">Izmeni</button>
+        </form>
+
+    </div>
+
+    <div class="overlay__sell">
+        <div class="overlay__sell--closeBtn">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <div class="overlay__sell--header">
+            <h1>Prodaj Karte</h1>
+        </div>
+
+        <form action="#" class="overlay__sell--inputs" id="formaSell">
+            <h2 id="naslovProjekcije">Thor Ragnarok</h2>
+            <h2 id="datumProjekcije">2018-02-08</h2>
+            <h2 id="pocetakProjekcije">22:30</h2>
+            <h2 id="salaProjekcije">Sala: 5</h2>
+            <h2 id="slobodnoMesta">Slobodno: 50</h2>
+            <h2 id="ukupnoMesta">Ukupno: 50</h2>
+
+            <input type="text" id="inputSell" placeholder="Broj karti za prodati" required>
+            <button type="submit">Prodaj</button>
+        </form>
+
+    </div>
+
+
+    <div class="overlay__dodaj--projekciju">
+         <div class="overlay__dodaj--closeBtn">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <div class="overlay__dodaj--header">
+            <h1>DODAJ PROJEKCIJU</h1>
+        </div>
+
+        <form class="overlay__dodaj--inputs" id="formaDodaj">
+            <select name="film" id="inputFilmDodaj">
+
+            </select>
+
+            <input type="date" name="datum" id="datumInputDodaj" required>
+            <input type="text" id="pocetakInputDodaj" placeholder="Pocetak Projekcije" required>
+            <select name="sala" id="salaInputDodaj" required>
+            </select>
+
+
+            <button type="submit">DODAJ</button>
+        </form>
+
+    </div>
+
+
+    <div class="overlay__user">
+            <div id="arrow-top">
+                <i class="fas fa-sort-up"></i>
+            </div>
+            <div class="overlay__user--prijava">
+                <div class="overlay__user--naslov">
+                <h1>PRIJAVITE SE</h1>
+            </div>
+
+            <form class="overlay__user--inputs" id="formaPrijava">
+                <input type="text" id="usernameInput" placeholder="Username..." required>
+                <input type="password" id="passwordInput" placeholder="Password..." required>
+                <button type="submit">PRIJAVA</button>
+            </form>
+            </div>
+
+            <div class="overlay__user--ulogovan">
+
+            </div>
+        </div>
+
+
+    <script src="scripts/logovanje.js"></script>
+    <script src="scripts/projekcije.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>

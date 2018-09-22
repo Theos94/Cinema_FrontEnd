@@ -1,0 +1,93 @@
+
+:root {
+    --accent: #FCA311;
+    --grey: #1C1C1C;
+    --secondary_bg: #18191D;
+    --secondary_accent: #0d6caf;
+
+}
+
+body {
+    overflow: hidden;
+}
+
+body.loaded {
+    overflow: visible;
+}
+
+body.loaded>.site__loader {
+    opacity: 0;
+    display: none;
+}
+
+.site__loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--grey);
+    z-index: 1500;
+    opacity: 1;
+    transition: all 1s;
+
+
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }
+
+.loader-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -120px 0 0 -120px;
+    width: 240px;
+    height: 240px;
+    z-index: 2000;
+  }
+
+  .loader-ring-light {
+    width: 240px;
+    height: 240px;
+    -moz-border-radius: 240px;
+    -webkit-border-radius: 240px;
+    border-radius: 240px;
+    -moz-box-shadow: 0 4px 0 var(--accent) inset;
+    -webkit-box-shadow: 0 4px 0 var(--accent) inset;
+    box-shadow: 0 4px 0 var(--accent) inset;
+    animation: rotate-360 2s linear infinite;
+  }
+
+  .loader-ring-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 240px;
+    -moz-border-radius: 240px;
+    -webkit-border-radius: 240px;
+    border-radius: 240px;
+    -moz-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3) inset;
+    -webkit-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3) inset;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3) inset;
+  }
+
+  @keyframes rotate-360 {
+    from {
+      -moz-transform: rotate(0);
+      -ms-transform: rotate(0);
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    to {
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }

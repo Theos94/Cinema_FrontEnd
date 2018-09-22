@@ -1,0 +1,428 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #fca311;
+  --grey: #1c1c1c;
+  --secondary_bg: #18191d;
+  --secondary_accent: #0d6caf;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  font-family: "Arvo", serif;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+.navigation {
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  font-family: "Arvo", serif;
+}
+
+.navigation__left {
+  padding-left: 2rem;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 1.3rem;
+  padding: 0 1rem;
+  display: inline-block;
+  font-family: "Oswald", "Arvo", serif;
+  font-weight: 600;
+  position: relative;
+}
+
+.navigation__left a:after {
+  content: "";
+  margin-bottom: auto;
+  display: block;
+  width: 0;
+  height: 4px;
+  background: var(--accent);
+  transition: width 0.3s;
+  background: linear-gradient(to right, transparent, var(--accent));
+  border-radius: 2px;
+}
+
+.navigation__left a:hover:after {
+  width: 100%;
+}
+
+.navigation__right {
+  padding-right: 2rem;
+}
+
+.navigation__right > * {
+  margin: 0 0.5rem;
+}
+
+.fa-search {
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.fa-user-circle {
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.site__wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+#slider,
+.hero__wrap--slideshow,
+.slide-content {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.hero__wrap--slideshow {
+  position: relative;
+  background-color: black;
+}
+
+.slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slide1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/black-panther-slideshow.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  animation: fadein 3s;
+}
+
+.slide2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/star-wars-slideshow.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  animation: fadein 3s;
+}
+
+.slide3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/jumanji-slideshow.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  animation: fadein 3s;
+}
+
+.slide4 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/infinity-slideshow.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  animation: fadein 3s;
+}
+
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.slide-content h1 {
+  font-size: 4rem;
+  color: var(--accent);
+  font-family: "Oswald", sans-serif;
+  padding-bottom: 1rem;
+  font-weight: bold;
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -2rem;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  z-index: 1;
+}
+
+#arrow-left {
+  border-width: 1em 1.5em 1em 0;
+  border-color: transparent var(--accent) transparent transparent;
+  left: 0;
+  margin-left: 1rem;
+}
+
+#arrow-right {
+  border-width: 1em 0 1em 1.5em;
+  border-color: transparent transparent transparent var(--accent);
+  right: 0;
+  margin-right: 1rem;
+}
+
+.slideshow-buttons a {
+  text-decoration: none;
+  color: var(--accent);
+  background: #18191d70;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 0.2rem solid #fca311;
+  margin: 0.5rem 0.5rem;
+  cursor: pointer;
+}
+
+/* Danasnji Repertoar style */
+
+.repertoar__naslov {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 2rem 0;
+}
+
+.repertoar__naslov h1 {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-gap: 20px;
+  align-items: center;
+  color: var(--accent);
+  font-family: "Oswald", "Arvo", serif;
+  font-weight: 600;
+}
+
+.repertoar__naslov h1:before,
+.repertoar__naslov h1:after {
+  display: block;
+  content: "";
+  height: 10px;
+  background: linear-gradient(
+    to var(--direction, left),
+    var(--accent),
+    transparent
+  );
+}
+
+.repertoar__naslov h1:after {
+  --direction: right;
+}
+
+.repertoar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--grey);
+}
+
+.repertoar__projeckije {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Style za svaki film/projekciju */
+
+.film {
+  max-width: 1200px;
+  display: grid;
+  width: 75%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 30px;
+  color: white;
+  align-self: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  background: var(--secondary_bg);
+  margin: 2rem auto;
+}
+
+.poster img {
+  width: 100%;
+  box-shadow: 0 0 0.5rem #04040570;
+}
+
+.tekst {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tekst h2 {
+  color: var(--accent);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: "Oswald", "Arvo", serif;
+  font-weight: 600;
+}
+
+.tekst h4 {
+  padding-top: 0.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.2rem;
+}
+
+.tekst span {
+  color: var(--secondary_accent);
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.buttons {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons a {
+  font-size: 1.5rem;
+  background: transparent;
+  border: 0.1rem solid var(--accent);
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.buttons a:hover,
+.buttons a:focus {
+  -webkit-box-shadow: 0 0.5em 0.5em -0.4em var(--accent);
+  box-shadow: 0 0.5em 0.5em -0.4em var(--accent);
+  -webkit-transform: translateY(-0.25em);
+  transform: translateY(-0.25em);
+}
+
+.buttons a {
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.projekcije {
+  height: 100%;
+  width: 100%;
+  max-height: 32rem;
+  /* display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-content: start;
+    align-items: center;
+    grid-auto-flow: dense; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.projekcija {
+  text-align: center;
+  /* align-self: center; */
+  padding: 0.5rem 2rem;
+  width: auto;
+  box-shadow: 0 0 0.5rem #04040570;
+  margin: 1rem 0.5rem;
+  color: white;
+  /* align-self: flex-start; */
+  transition: all 0.2s;
+}
+
+.projekcija:hover {
+  box-shadow: 0 0 0.5rem var(--accent);
+}
+
+.projekcija h4:first-child {
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.projekcija h4 {
+  padding: 0.1rem 0;
+}
+
+/* Scroll to top BTN */
+.back__top--btn {
+  position: fixed;
+  bottom: 5%;
+  right: 1%;
+  z-index: 1010;
+  cursor: pointer;
+  transform: translateX(400%);
+  transition: all 0.2s;
+}
+
+.back__top--btn i {
+  color: var(--secondary_accent);
+  font-size: 2.2rem;
+}
+
+.back__top--btn.active {
+  transform: translateX(0);
+}
+
+/* Footer */
+footer {
+  height: 20vh;
+  background-color: var(--secondary_bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--accent);
+  box-shadow: 0 0 1rem #040405;
+}
+
+.footer__social--icons {
+  font-size: 2rem;
+  color: var(--secondary_accent);
+
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.footer__social--icons > * {
+  margin: 0 0.6rem;
+}
+
+footer h5 {
+  color: #ffffff71;
+}

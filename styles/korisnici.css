@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent: #FCA311;
+    --grey: #1C1C1C;
+    --secondary_bg: #18191D;
+    --secondary_accent: #0d6caf;
+
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-family: 'Arvo', serif;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+
+}
+
+.navigation {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    font-family: 'Arvo', serif;
+}
+
+.navigation__left {
+    padding-left: 2rem;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 1.3rem;
+    padding: 0 1rem;
+    display: inline-block;
+    font-family: 'Oswald', 'Arvo', serif;
+    font-weight: 600;
+    position: relative;
+}
+
+.navigation__left a:after {
+    content: '';
+    margin-bottom: auto;
+    display: block;
+    width: 0;
+    height: 4px;
+    background: var(--accent);
+    transition: width .3s;
+    background: linear-gradient(to right, transparent, var(--accent));
+    border-radius: 2px;
+}
+
+.navigation__left a:hover:after {
+    width: 100%;
+}
+
+.navigation__right {
+    padding-right: 2rem;
+}
+
+.navigation__right>* {
+    margin: 0 0.5rem;
+}
+
+.fa-search {
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.fa-user-circle {
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.site__wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;;
+    background: var(--grey);
+}
+
+
+.korisnici {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+    width: 80%;
+    margin: auto;
+}
+
+.korisnici__naslov {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 2rem 0;
+
+}
+
+.korisnici__naslov h1 {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    color: var(--accent);
+    font-family: 'Oswald', 'Arvo', serif;
+    font-weight: 600;
+}
+
+.korisnici__naslov h1:before, .korisnici__naslov h1:after {
+    display: block;
+    content: "";
+    height: 10px;
+    background: linear-gradient(to var(--direction, left), var(--accent), transparent);
+}
+
+.korisnici__naslov h1:after {
+    --direction: right;
+}
+
+.korisnici__input {
+    margin: auto;
+
+}
+
+.korisnici__input button {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border: 0.1rem solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+}
+
+.korisnici__input button:focus {
+    outline: none;
+}
+
+.korisnici__primer {
+    color: var(--accent);
+    font-size: 1.8rem;
+    font-family: 'Oswald','Arvo', serif;
+    border-left: 0.1rem solid var(--accent);
+    padding-left: 0.5rem
+}
+
+
+
+
+.korisnici__kontejner {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    color: var(--secondary_accent);
+    padding-top: 4rem;
+}
+
+.korisnici__kontejner>*{
+    border-left: 0.1rem solid var(--accent);
+    padding-left: 1rem;
+}
+
+.delete__btn {
+    color: rgb(128, 3, 3);
+    font-size: 1.5rem;
+}
+
+.delete__btn>.fa-minus-circle {
+    padding-left: 1rem;
+}
+
+#email {
+    grid-column: span 2;
+}
+
+
+.overlay__dodaj--korisnika {
+    position: fixed;
+    z-index: 1000;
+    background: rgba(8, 8, 8, 0.8);
+    width: 40vw;
+    height: 60vh;
+    top: 20vh;
+    display: flex;
+    flex-direction: column;
+    left: 30vw;
+    transform: translateY(-200%);
+    transition: all 0.3s;
+}
+
+.overlay__dodaj--korisnika.active {
+    transform: translateY(0);
+}
+
+.overlay__edit--closeBtn {
+    color: var(--accent);
+    font-size: 2rem;
+    position: absolute;
+    right: -2vw;
+    top: -4vh;
+}
+
+
+.overlay__dodaj--korisnika--header {
+    padding-top: 1rem;
+    text-align: center;
+    color: var(--accent);
+    font-family: 'Oswald', 'Arvo', serif;
+}
+
+.overlay__dodaj--korisnika--inputs {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem
+}
+
+.overlay__dodaj--korisnika--inputs input {
+    font-size: 1.2rem;
+    padding: 0.2rem 0.4rem;
+    margin: 0.5rem 0;
+    border: 0.1rem solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+}
+
+.overlay__dodaj--korisnika--inputs input:focus {
+    outline: none;
+}
+
+.overlay__dodaj--korisnika--inputs button {
+    align-self: center;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.2rem;
+    background: transparent;
+    color: var(--accent);
+    border: 0.1rem solid var(--accent);
+}
+
+
+
+/* Placeholder Style */
+:-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    var(--secondary_accent);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    var(--secondary_accent);
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    var(--secondary_accent);
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    var(--secondary_accent);
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color:    var(--secondary_accent);
+}
+
+::placeholder { /* Most modern browsers support this now. */
+    color:    var(--secondary_accent);
+}
+
+
+#pageMask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 2;
+    display: none;
+}
+
+.site__wrapper.active,
+.navigation.active {
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+}
